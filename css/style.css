@@ -1,0 +1,66 @@
+body {
+    margin: 0;
+    width: 100%;
+}
+
+#container {
+    background: grey;
+    height: 70vh;
+    width: 100%;
+    text-align: center;
+}
+
+pre {
+    text-align: center;
+}
+
+.center {
+    position: relative;
+    height: 10vh;
+    width: 40%;
+    background: rgba(173, 216, 230, 0);
+    padding-top: 440px;
+    margin: 0 auto;
+}
+
+#h1-1 {
+    color: rgb(0, 0, 0);
+}
+
+#h1-2 {
+    color: rgb(59, 0, 59);
+}
+
+#h1-3 {
+    color: rgb(102, 0, 102);
+}
+
+#h1-4 {
+    color: rgb(136, 0, 136);
+}
+
+#h1-5 {
+    color: rgb(179, 0, 179);
+}
+
+#h1-6 {
+    color: rgb(216, 0, 216);
+}
+
+#h1-7 {
+    color: rgb(255, 0, 255);
+}
+
+#h1-8 {
+    color: rgb(0, 0, 0);
+    text-shadow: 0 0 21px purple;
+}
+
+h1 {
+    position: absolute;
+    margin: 0 auto;
+    font-size: 130px;
+    padding-top: 0px;
+    opacity: 1;
+    /* top: 320px; */
+}
