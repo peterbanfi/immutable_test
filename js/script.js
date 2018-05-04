@@ -1,109 +1,36 @@
-/* The magic. */
-document.addEventListener("scroll", () => {
-    moveh11(window.scrollY, opacityh11);
-    moveh12(window.scrollY, opacityh12);
-    moveh13(window.scrollY, opacityh12);
-    moveh14(window.scrollY, opacityh12);
-    moveh15(window.scrollY, opacityh12);
-    moveh16(window.scrollY, opacityh12);
-    moveh17(window.scrollY, opacityh12);
-});
-
-
+"use strict";
 /* H1-1 */
 let h11 = document.getElementById('h1-1');
 let styleh11 = window.getComputedStyle(h11);
 let toph11 = parseInt(styleh11.getPropertyValue('padding-top').slice(0, -2));
 let opacityh11 = parseInt(styleh11.getPropertyValue('opacity'));
-
-function moveh11(pos, opa) {
-    let opacity = opa - 0.100;
-    h11.style.paddingTop = `${pos}px`;
-    h11.style.opacity = (opa - (pos / 300));
-    console.log('Position: ', pos);
-    console.log('Opacity: ', h11.style.opacity);
-}
-
 /* H1-2 */
 let h12 = document.getElementById('h1-2');
 let styleh12 = window.getComputedStyle(h12);
 let toph12 = parseInt(styleh12.getPropertyValue('padding-top').slice(0, -2));
 let opacityh12 = parseInt(styleh12.getPropertyValue('opacity'));
-
-function moveh12(pos, opa) {
-    if (pos > 60) {
-        let opacity = opa - 0.100;
-        h12.style.paddingTop = `${pos-60}px`;
-        h12.style.opacity = (opa - ((pos - 60) / 300));
-    }
-}
-
-/* H1-3 */
+/* H1-3--7 */
 let h13 = document.getElementById('h1-3');
-let styleh13 = window.getComputedStyle(h13);
-let toph13 = parseInt(styleh13.getPropertyValue('padding-top').slice(0, -2));
-let opacityh13 = parseInt(styleh13.getPropertyValue('opacity'));
-
-function moveh13(pos, opa) {
-    if (pos > 120) {
-        let opacity = opa - 0.100;
-        h13.style.paddingTop = `${pos-120}px`;
-        h13.style.opacity = (opa - ((pos - 120) / 300));
-    }
-}
-
-/* H1-4 */
 let h14 = document.getElementById('h1-4');
-let styleh14 = window.getComputedStyle(h14);
-let toph14 = parseInt(styleh14.getPropertyValue('padding-top').slice(0, -2));
-let opacityh14 = parseInt(styleh14.getPropertyValue('opacity'));
-
-function moveh14(pos, opa) {
-    if (pos > 180) {
-        let opacity = opa - 0.100;
-        h14.style.paddingTop = `${pos-180}px`;
-        h14.style.opacity = (opa - ((pos - 180) / 300));
-    }
-}
-
-/* H1-5 */
 let h15 = document.getElementById('h1-5');
-let styleh15 = window.getComputedStyle(h15);
-let toph15 = parseInt(styleh15.getPropertyValue('padding-top').slice(0, -2));
-let opacityh15 = parseInt(styleh15.getPropertyValue('opacity'));
-
-function moveh15(pos, opa) {
-    if (pos > 240) {
-        let opacity = opa - 0.100;
-        h15.style.paddingTop = `${pos-240}px`;
-        h15.style.opacity = (opa - ((pos - 240) / 300));
-    }
-}
-
-/* H1-6 */
 let h16 = document.getElementById('h1-6');
-let styleh16 = window.getComputedStyle(h16);
-let toph16 = parseInt(styleh16.getPropertyValue('padding-top').slice(0, -2));
-let opacityh16 = parseInt(styleh16.getPropertyValue('opacity'));
-
-function moveh16(pos, opa) {
-    if (pos > 300) {
-        let opacity = opa - 0.100;
-        h16.style.paddingTop = `${pos-300}px`;
-        h16.style.opacity = (opa - ((pos - 300) / 300));
-    }
-}
-
-/* H1-7 */
 let h17 = document.getElementById('h1-7');
-let styleh17 = window.getComputedStyle(h17);
-let toph17 = parseInt(styleh17.getPropertyValue('padding-top').slice(0, -2));
-let opacityh17 = parseInt(styleh17.getPropertyValue('opacity'));
 
-function moveh17(pos, opa) {
-    if (pos > 360) {
+/* The magic. */
+document.addEventListener("scroll", () => {
+    moveh(window.scrollY, opacityh11, h11, 0);
+    moveh(window.scrollY, opacityh12, h12, 60);
+    moveh(window.scrollY, opacityh12, h13, 120);
+    moveh(window.scrollY, opacityh12, h14, 180);
+    moveh(window.scrollY, opacityh12, h15, 240);
+    moveh(window.scrollY, opacityh12, h16, 300);
+    moveh(window.scrollY, opacityh12, h17, 360);
+});
+
+function moveh(pos, opa, h, num) {
+    if (pos > num) {
         let opacity = opa - 0.100;
-        h17.style.paddingTop = `${pos-360}px`;
-        h17.style.opacity = (opa - ((pos - 360) / 360));
+        h.style.paddingTop = `${pos-num}px`;
+        h.style.opacity = (opa - ((pos - num) / 300));
     }
 }

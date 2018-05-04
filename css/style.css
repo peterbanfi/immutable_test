@@ -8,6 +8,7 @@ body {
     height: 70vh;
     width: 100%;
     text-align: center;
+    background-attachment: fixed;
 }
 
 pre {
